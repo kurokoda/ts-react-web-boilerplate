@@ -8,7 +8,7 @@ const HomePage = ({ onButtonClick }: HomePageProps) => {
   return (
     <>
       <div>HOME</div>
-      <TextButton onClick={onButtonClick} text="Click Me" />
+      <TextButton label="Click Me" onClick={onButtonClick} />
     </>
   );
 };

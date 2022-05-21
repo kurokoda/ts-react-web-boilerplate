@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import { HomePageMediator } from "../page/home/homePageMediator";
+import { HomePageMediator } from "../page";
 
 const Router = () => {
   return (
