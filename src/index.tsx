@@ -3,8 +3,10 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import { Router } from "./router/router";
+import { store } from "./state";
 import reportWebVitals from "./service/analytics/reportWebVitals/reportWebVitals";
 
 const root = ReactDOM.createRoot(
@@ -12,9 +14,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
