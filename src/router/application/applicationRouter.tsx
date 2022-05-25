@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 
-import { HomePageMediator } from "../page";
+import { HomePageMediator } from "../../page";
 
-const Router = () => {
+const ApplicationRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePageMediator />} />
@@ -11,4 +11,4 @@ const Router = () => {
   );
 };
 
-export { Router };
+export { ApplicationRouter };
