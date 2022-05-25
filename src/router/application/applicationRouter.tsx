@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { MessageCard } from "../../component/cards/message/messageCard";
 
 import { HomePageMediator } from "../../page";
 
@@ -7,6 +8,10 @@ const ApplicationRouter = () => {
     <Routes>
       <Route path="/" element={<HomePageMediator />} />
       <Route path="about" element={<div>ABOUT</div>} />
+      <Route
+        path="*"
+        element={<MessageCard icon="error" text="Bar" title="Foo" />}
+      />
     </Routes>
   );
 };

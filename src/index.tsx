@@ -12,11 +12,11 @@ import {
   useFirebaseApp,
 } from "reactfire";
 
-import { ApplicationRouter } from "./router";
 import { reportWebVitals } from "./service";
 import { store } from "./state";
 import { getFirestore } from "firebase/firestore";
-import { firebaseConfig } from "./constant";
+import { FIREBASE_CONFIG } from "./constant";
+import { ApplicationContainer } from "./component/layout/application/applicationContainer";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -29,7 +29,7 @@ const Application = () => {
     <Provider store={store}>
       <FirestoreProvider sdk={firestoreInstance}>
         <BrowserRouter>
-          <ApplicationRouter />
+          <ApplicationContainer />
         </BrowserRouter>
       </FirestoreProvider>
     </Provider>
@@ -38,7 +38,7 @@ const Application = () => {
 
 root.render(
   <React.StrictMode>
-    <FirebaseProvider firebaseConfig={firebaseConfig}>
+    <FirebaseProvider firebaseConfig={FIREBASE_CONFIG}>
       <Application />
     </FirebaseProvider>
   </React.StrictMode>

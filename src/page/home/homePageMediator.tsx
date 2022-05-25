@@ -3,21 +3,36 @@ import { useDispatch } from "react-redux";
 import { HomePage } from "./homePage";
 import { increment } from "../../state/local/slice/example/example";
 import { useExample } from "../../state";
+import { LoadingCard } from "../../component/cards/loading/loadingCard";
+import { MessageCard } from "../../component/cards/message/messageCard";
 
 const HomePageMediator = () => {
   const dispatch = useDispatch();
 
-  const [exampleData, exampleDataStatus] = useExample();
+  const [firestoreTestData, firestoreTestDataStatus] = useExample();
 
   const onButtonClick = () => {
     dispatch(increment());
   };
 
-  if (exampleDataStatus === "error") return <div>Error</div>;
+  if (firestoreTestDataStatus === "loading") {
+    return <LoadingCard/>;
+  }
 
-  if (exampleDataStatus === "loading") return <div>Loading</div>;
+  if (
+    firestoreTestDataStatus === "error" ||
+    (firestoreTestDataStatus === "success" && !firestoreTestData)
+  ) {
+    console.log("Ian : error");
+    return <MessageCard icon="error" text="Please refresh the app to try again" title="Oops!"/>
+  }
 
-  return <HomePage exampleData={exampleData} onButtonClick={onButtonClick} />;
+  return (
+    <HomePage
+      firestoreTestData={firestoreTestData}
+      onButtonClick={onButtonClick}
+    />
+  );
 };
 
 export { HomePageMediator };
