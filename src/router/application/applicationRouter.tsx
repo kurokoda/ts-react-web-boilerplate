@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { MessageCard } from "../../component/card/message/messageCard";
 
+import { MessageCard } from "../../component";
 import { HomePageMediator } from "../../page";
 
 const ApplicationRouter = () => {
@@ -10,7 +10,7 @@ const ApplicationRouter = () => {
       <Route path="about" element={<div>ABOUT</div>} />
       <Route
         path="*"
-        element={<MessageCard icon="error" text="Bar" title="Foo" />}
+        element={<MessageCard icon="error" text="Bar" title="Oopps" />}
       />
     </Routes>
   );

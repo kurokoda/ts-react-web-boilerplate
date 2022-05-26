@@ -2,17 +2,16 @@ import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import styled from "styled-components/macro";
 
-import { ApplicationRouter } from "../../../router";
-import { ApplicationModalContext } from "../../../state/local/context/applicationModal/applicationModalContext";
 import { ResponsiveContainer } from "../../container/responsive/responsiveContainer";
-import { SidebarNavigationMenu } from "../../navigation/menu/sidebar/sidebarNavigationMenu";
-import { TopNavigationMenu } from "../../navigation/menu/top/topNavigationMenu";
+import { DesktopApplicationHeader } from "../../header/application/desktop/desktopApplicationHeader";
+import { MobileApplicationHeader } from "../../header/application/mobile/mobileApplicationHeader";
+import { DesktopNavigationMenu } from "../../navigation/menu/desktop/desktopNavigationMenu";
+import { MobileNavigationMenu } from "../../navigation/menu/mobile/mobileNavigationMenu";
 
-const DesktopContainer = styled.div`
-  display: flex;
-`;
+import { ApplicationRouter } from "../../../router";
+import { ApplicationModalContext } from "../../../state";
 
-const ApplicationContainer = () => {
+const ApplicationLayout = () => {
   const [modalContent, setModalContent] = useState<JSX.Element | undefined>();
 
   const application = <ApplicationRouter />;
@@ -35,19 +34,21 @@ const ApplicationContainer = () => {
 
       <ApplicationModalContext.Provider value={{ showModal, hideModal }}>
         <ResponsiveContainer isMobile>
-          <TopNavigationMenu />
+          <MobileApplicationHeader />
+          <MobileNavigationMenu />
           {application}
         </ResponsiveContainer>
 
         <ResponsiveContainer isDesktop>
-          <DesktopContainer>
-            <SidebarNavigationMenu />
+          <DesktopApplicationHeader />
+          <div className="d-flex">
+            <DesktopNavigationMenu />
             <div>{application}</div>
-          </DesktopContainer>
+          </div>
         </ResponsiveContainer>
       </ApplicationModalContext.Provider>
     </>
   );
 };
 
-export { ApplicationContainer, ApplicationModalContext };
+export { ApplicationLayout };

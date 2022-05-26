@@ -16,7 +16,7 @@ import { reportWebVitals } from "./service";
 import { store } from "./state";
 import { getFirestore } from "firebase/firestore";
 import { FIREBASE_CONFIG } from "./constant";
-import { ApplicationContainer } from "./component/layout/application/applicationContainer";
+import { ApplicationLayout } from "./component";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -29,7 +29,7 @@ const Application = () => {
     <Provider store={store}>
       <FirestoreProvider sdk={firestoreInstance}>
         <BrowserRouter>
-          <ApplicationContainer />
+          <ApplicationLayout />
         </BrowserRouter>
       </FirestoreProvider>
     </Provider>
