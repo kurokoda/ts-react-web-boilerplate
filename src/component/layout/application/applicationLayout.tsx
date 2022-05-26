@@ -10,6 +10,11 @@ import { MobileNavigationMenu } from "../../navigation/menu/mobile/mobileNavigat
 
 import { ApplicationRouter } from "../../../router";
 import { ApplicationModalContext } from "../../../state";
+import { APPLICATION_DIMENSIONS_MINIMUM_WIDTH } from "../../../constant";
+
+const ApplicationLayoutContainer = styled.div`
+  min-width: ${APPLICATION_DIMENSIONS_MINIMUM_WIDTH};
+`;
 
 const ApplicationLayout = () => {
   const [modalContent, setModalContent] = useState<JSX.Element | undefined>();
@@ -27,7 +32,7 @@ const ApplicationLayout = () => {
   };
 
   return (
-    <>
+    <ApplicationLayoutContainer>
       <Modal show={Boolean(modalContent)} onHide={hideModal}>
         {modalContent}
       </Modal>
@@ -47,7 +52,7 @@ const ApplicationLayout = () => {
           </div>
         </ResponsiveContainer>
       </ApplicationModalContext.Provider>
-    </>
+    </ApplicationLayoutContainer>
   );
 };
 

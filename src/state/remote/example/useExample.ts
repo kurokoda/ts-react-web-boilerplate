@@ -13,7 +13,6 @@ export const useExample = (): DatabaseQueryResult => {
 
   useEffect(() => {
     if (data) {
-      console.log("Ian : data", data);
       setValue(data);
     }
   }, [data]);
