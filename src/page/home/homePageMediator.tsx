@@ -3,16 +3,24 @@ import { useDispatch } from "react-redux";
 import { HomePage } from "./homePage";
 import { increment } from "../../state/local/slice/example/example";
 import { useExample } from "../../state";
-import { LoadingCard } from "../../component/cards/loading/loadingCard";
-import { MessageCard } from "../../component/cards/message/messageCard";
+import { LoadingCard } from "../../component/card/loading/loadingCard";
+import { MessageCard } from "../../component/card/message/messageCard";
+import { useContext } from "react";
+import { ApplicationModalContext } from "../../component/layout/application/applicationContainer";
 
 const HomePageMediator = () => {
   const dispatch = useDispatch();
 
   const [firestoreTestData, firestoreTestDataStatus] = useExample();
 
-  const onButtonClick = () => {
+  const { showModal } = useContext(ApplicationModalContext)
+
+  const incrementReduxState = () => {
     dispatch(increment());
+  };
+
+  const showApplicationModal = (modalContent:JSX.Element) => {
+    showModal(modalContent)
   };
 
   if (firestoreTestDataStatus === "loading") {
@@ -30,7 +38,8 @@ const HomePageMediator = () => {
   return (
     <HomePage
       firestoreTestData={firestoreTestData}
-      onButtonClick={onButtonClick}
+      onModalButtonClick={showApplicationModal}
+      onReduxButtonClick={incrementReduxState}
     />
   );
 };

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { MessageCard } from "../../component/cards/message/messageCard";
+import { MessageCard } from "../../component/card/message/messageCard";
 
 import { HomePageMediator } from "../../page";
 

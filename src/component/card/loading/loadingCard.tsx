@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { LoadingIndicator } from "../../../component/loadingIndicator/loadingIndicator";
+import { LoadingIndicator } from "../../loadingIndicator/loadingIndicator";
 
 interface LoadingCardProps {
   height?: string;

@@ -1,9 +1,6 @@
 import { doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import {
-  useFirestore,
-  useFirestoreDocData,
-} from "reactfire";
+import { useFirestore, useFirestoreDocData } from "reactfire";
 
 import { DatabaseQueryResult } from "../../../type";
 
@@ -16,7 +13,7 @@ export const useExample = (): DatabaseQueryResult => {
 
   useEffect(() => {
     if (data) {
-      console.log("Ian : data", data)
+      console.log("Ian : data", data);
       setValue(data);
     }
   }, [data]);

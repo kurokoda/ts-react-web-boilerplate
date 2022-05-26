@@ -10,7 +10,11 @@ export default {
 } as ComponentMeta<typeof HomePage>;
 
 const Template: ComponentStory<typeof HomePage> = () => (
-  <HomePage firestoreTestData={{}} onButtonClick={() => console.log("onButtonClick")} />
+  <HomePage
+    firestoreTestData={{}}
+    onModalButtonClick={() => console.log("onModalButtonClick")}
+    onReduxButtonClick={() => console.log("onReduxButtonClick")}
+  />
 );
 
 export const Primary = Template.bind({});

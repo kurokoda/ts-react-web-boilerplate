@@ -1,1 +1,1 @@
-export { TextButton } from "./elements/button/text/textButton"
+export { TextButton } from "./element/button/text/textButton"
