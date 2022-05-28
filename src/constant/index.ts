@@ -1,3 +1,3 @@
 export { FIREBASE_CONFIG } from "./firebase/config";
-export { APPLICATION_COLORS } from "./application/colors";
-export { APPLICATION_DIMENSIONS } from "./application/dimensions";
+export { APPLICATION_COLOR } from "./application/colors";
+export { APPLICATION_DIMENSION } from "./application/dimensions";

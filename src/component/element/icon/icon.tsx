@@ -15,6 +15,7 @@ import {
   Home as HomeIcon,
   LocalHospital as HospitalIcon,
   MoreHoriz as MoreIcon,
+  Menu as MenuIcon,
   Description as NotesIcon,
   Person as PersonIcon,
   PhoneIphone as MobileIcon,
@@ -26,6 +27,7 @@ import {
 } from "@material-ui/icons";
 import { SvgIconTypeMap } from "@material-ui/core";
 import { OverridableComponent } from "@material-ui/core/OverridableComponent";
+import { APPLICATION_COLOR } from "../../../constant";
 
 export const iconTypes = [
   "add",
@@ -43,6 +45,7 @@ export const iconTypes = [
   "help",
   "home",
   "late",
+  "menu",
   "mobile",
   "more",
   "notes",
@@ -72,6 +75,7 @@ const typeToIconMap: Record<IconType, OverridableComponent<SvgIconTypeMap>> = {
   help: HelpIcon,
   home: HomeIcon,
   late: LateIcon,
+  menu: MenuIcon,
   mobile: MobileIcon,
   more: MoreIcon,
   notes: NotesIcon,
@@ -89,7 +93,7 @@ interface IconProps {
 
 const Icon = ({ color, type }: IconProps) => {
   const IconFromMap = typeToIconMap[type];
-  return <IconFromMap style={{ fill: color ? color : "#666666" }} />;
+  return <IconFromMap style={{ fill: color ? color : APPLICATION_COLOR.GRAYSCALE_MEDIUM }} />;
 };
 
 export { Icon };

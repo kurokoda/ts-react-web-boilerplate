@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-import { LoadingIndicator } from "../../loadingIndicator/loadingIndicator";
+import { LoadingIndicator } from "../../element/loadingIndicator/loadingIndicator";
 
 interface LoadingCardProps {
   height?: string;

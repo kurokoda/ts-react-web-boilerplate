@@ -1,6 +1,7 @@
-export const APPLICATION_COLORS = {
+export const APPLICATION_COLOR = {
   BLACK: "#000000",
   GRAYSCALE_DARKEST: "#333333",
-  GRAYSCALE_LIGHTEST: "#ddd",
+  GRAYSCALE_LIGHTEST: "#dddddd",
+  GRAYSCALE_MEDIUM: "#666666",
   WHITE: "#ffffff",
 };

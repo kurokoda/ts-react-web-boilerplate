@@ -6,14 +6,12 @@ import { ResponsiveContainer } from "../../container/responsive/responsiveContai
 import { DesktopApplicationHeader } from "../../header/application/desktop/desktopApplicationHeader";
 import { MobileApplicationHeader } from "../../header/application/mobile/mobileApplicationHeader";
 import { DesktopNavigationMenu } from "../../navigation/menu/desktop/desktopNavigationMenu";
-import { MobileNavigationMenu } from "../../navigation/menu/mobile/mobileNavigationMenu";
-
 import { ApplicationRouter } from "../../../router";
 import { ApplicationModalContext } from "../../../state";
-import { APPLICATION_DIMENSIONS } from "../../../constant";
+import { APPLICATION_DIMENSION } from "../../../constant";
 
 const ApplicationLayoutContainer = styled.div`
-  min-width: ${APPLICATION_DIMENSIONS.MINIMUM_WIDTH}px;
+  min-width: ${APPLICATION_DIMENSION.MINIMUM_WIDTH}px;
 `;
 
 const ApplicationLayout = () => {
@@ -40,8 +38,7 @@ const ApplicationLayout = () => {
       <ApplicationModalContext.Provider value={{ showModal, hideModal }}>
         <ResponsiveContainer isMobile>
           <MobileApplicationHeader />
-          <MobileNavigationMenu />
-          {application}
+          <div className="m-3 w-100">{application}</div>
         </ResponsiveContainer>
 
         <ResponsiveContainer isDesktop>

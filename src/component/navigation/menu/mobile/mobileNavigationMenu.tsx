@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
-import {
-  APPLICATION_DIMENSIONS,
-  APPLICATION_COLORS,
-} from "../../../../constant";
+
+import { APPLICATION_DIMENSION } from "../../../../constant";
 
 const MobileNavigationMenuContainer = styled.div`
-  background-color: ${APPLICATION_COLORS.GRAYSCALE_LIGHTEST};
-  height: ${APPLICATION_DIMENSIONS.MOBILE_HEADER_HEIGHT};
+  display: flex;
+  flex-direction: column;
+  height: ${APPLICATION_DIMENSION.MOBILE_HEADER_HEIGHT};
 `;
 
 const MobileNavigationMenu = () => {

@@ -1,8 +1,8 @@
 import styled from "styled-components/macro";
 import { ReactNode } from "react";
 
-import { Icon, IconType } from "../../icon/icon";
-import { APPLICATION_DIMENSIONS } from "../../../constant";
+import { Icon, IconType } from "../../element/icon/icon";
+import { APPLICATION_DIMENSION } from "../../../constant";
 
 interface MessageCardProps {
   icon: IconType;
@@ -55,7 +55,7 @@ const MessageCardText = styled.p`
 `;
 
 const MessageCard = ({
-  height = `calc(100vh - ${APPLICATION_DIMENSIONS.MOBILE_HEADER_HEIGHT}px)`,
+  height = `calc(100vh - ${APPLICATION_DIMENSION.MOBILE_HEADER_HEIGHT}px)`,
   icon,
   title,
   text,
