@@ -1,6 +1,8 @@
-import { Icon, IconType } from "../../icon/icon";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { ReactNode } from "react";
+
+import { Icon, IconType } from "../../icon/icon";
+import { APPLICATION_DIMENSIONS } from "../../../constant";
 
 interface MessageCardProps {
   icon: IconType;
@@ -11,7 +13,7 @@ interface MessageCardProps {
   render?: () => ReactNode;
 }
 
-const NoItemsContainer = styled.div<{ height: string }>`
+const MessageCardContainer = styled.div<{ height: string }>`
   align-items: center;
   background-color: #fafafa;
   border-radius: 8px;
@@ -21,7 +23,7 @@ const NoItemsContainer = styled.div<{ height: string }>`
   width: 100%;
 `;
 
-const NoItemsContent = styled.div`
+const MessageCardContent = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
@@ -29,7 +31,7 @@ const NoItemsContent = styled.div`
   height: 240px;
 `;
 
-const NoItemsIconContainer = styled.div`
+const MessageCardIconContainer = styled.div`
   align-items: center;
   background-color: #ffffff;
   border-radius: 100%;
@@ -42,34 +44,32 @@ const NoItemsIconContainer = styled.div`
   width: 80px;
 `;
 
-const NoItemsHeader = styled.h5`
+const MessageCardHeader = styled.h5`
   font-weight: 700;
   padding: 20px 0 0 0;
 `;
 
-const NoItemsText = styled.p`
+const MessageCardText = styled.p`
   max-width: 480px;
   text-align: center;
 `;
 
 const MessageCard = ({
-  height = "calc(100vh - 200px)",
+  height = `calc(100vh - ${APPLICATION_DIMENSIONS.MOBILE_HEADER_HEIGHT}px)`,
   icon,
-  render,
   title,
   text,
 }: MessageCardProps) => {
   return (
-    <NoItemsContainer height={height}>
-      <NoItemsContent>
-        <NoItemsIconContainer>
+    <MessageCardContainer height={height}>
+      <MessageCardContent>
+        <MessageCardIconContainer>
           <Icon type={icon} color="#666666" />
-        </NoItemsIconContainer>
-        <NoItemsHeader>{title}</NoItemsHeader>
-        <NoItemsText>{text}</NoItemsText>
-        {render ? render() : null}
-      </NoItemsContent>
-    </NoItemsContainer>
+        </MessageCardIconContainer>
+        <MessageCardHeader>{title}</MessageCardHeader>
+        <MessageCardText>{text}</MessageCardText>
+      </MessageCardContent>
+    </MessageCardContainer>
   );
 };
 

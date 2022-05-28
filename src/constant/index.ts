@@ -1,7 +1,3 @@
 export { FIREBASE_CONFIG } from "./firebase/config";
-export { APPLICATION_COLORS_GRAYSCALE_LIGHTEST } from "./application/colors";
-export {
-  APPLICATION_DIMENSIONS_MOBILE_HEADER_HEIGHT,
-  APPLICATION_DIMENSIONS_DESKTOP_HEADER_WIDTH,
-  APPLICATION_DIMENSIONS_MINIMUM_WIDTH,
-} from "./application/dimensions";
+export { APPLICATION_COLORS } from "./application/colors";
+export { APPLICATION_DIMENSIONS } from "./application/dimensions";

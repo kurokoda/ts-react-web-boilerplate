@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { Helmet } from "react-helmet-async";
+import styled from "styled-components/macro";
 
 import { TextButton } from "../../component";
 import { GapContainer } from "../../component/container/gap/gapContainer";
@@ -10,10 +11,6 @@ type HomePageProps = {
   onReduxButtonClick: () => void;
 };
 
-const Hero = styled.div`
-  font-size: 4rem;
-`;
-
 const HomePage = ({
   firestoreTestData,
   onModalButtonClick,
@@ -21,8 +18,14 @@ const HomePage = ({
 }: HomePageProps) => {
   return (
     <>
-      <Hero>HOME</Hero>
-      <div>{firestoreTestData.message}</div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        {/* TODO replace with constants */}
+        <title>Home</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <div>HOME</div>
+      <div className="mb-1">{firestoreTestData.message}</div>
       <GapContainer>
         <TextButton
           label="Increment Redux State"

@@ -2,16 +2,19 @@ import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import {
-  APPLICATION_COLORS_GRAYSCALE_LIGHTEST,
-  APPLICATION_DIMENSIONS_DESKTOP_HEADER_WIDTH,
+  APPLICATION_COLORS,
+  APPLICATION_DIMENSIONS,
 } from "../../../../constant";
 
 const DesktopNavigationMenuContainer = styled.div`
-  background-color: ${APPLICATION_COLORS_GRAYSCALE_LIGHTEST};
+  background-color: ${APPLICATION_COLORS.WHITE};
+  border-right: 1px solid  ${APPLICATION_COLORS.GRAYSCALE_LIGHTEST};
   display: flex;
   flex-direction: column;
+  gap: 10px;
   height: 100vh;
-  width: ${APPLICATION_DIMENSIONS_DESKTOP_HEADER_WIDTH};
+  padding: 20px;
+  width: ${APPLICATION_DIMENSIONS.DESKTOP_HEADER_WIDTH}px;
 `;
 
 const DesktopNavigationMenu = () => {

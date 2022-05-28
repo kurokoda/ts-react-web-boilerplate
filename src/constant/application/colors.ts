@@ -1,1 +1,6 @@
-export const APPLICATION_COLORS_GRAYSCALE_LIGHTEST = "pink"
+export const APPLICATION_COLORS = {
+  BLACK: "#000000",
+  GRAYSCALE_DARKEST: "#333333",
+  GRAYSCALE_LIGHTEST: "#ddd",
+  WHITE: "#ffffff",
+};

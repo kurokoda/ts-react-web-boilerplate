@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
 import React from "react";
+import { HelmetProvider } from "react-helmet-async";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -28,9 +29,11 @@ const Application = () => {
   return (
     <Provider store={store}>
       <FirestoreProvider sdk={firestoreInstance}>
-        <BrowserRouter>
-          <ApplicationLayout />
-        </BrowserRouter>
+        <HelmetProvider>
+          <BrowserRouter>
+            <ApplicationLayout />
+          </BrowserRouter>
+        </HelmetProvider>
       </FirestoreProvider>
     </Provider>
   );

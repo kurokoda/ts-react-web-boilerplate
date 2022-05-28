@@ -10,7 +10,13 @@ const ApplicationRouter = () => {
       <Route path="about" element={<div>ABOUT</div>} />
       <Route
         path="*"
-        element={<MessageCard icon="error" text="Bar" title="Oopps" />}
+        element={
+          <MessageCard
+            icon="error"
+            text="This page does not exist"
+            title="Oops!"
+          />
+        }
       />
     </Routes>
   );

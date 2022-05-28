@@ -10,10 +10,10 @@ import { MobileNavigationMenu } from "../../navigation/menu/mobile/mobileNavigat
 
 import { ApplicationRouter } from "../../../router";
 import { ApplicationModalContext } from "../../../state";
-import { APPLICATION_DIMENSIONS_MINIMUM_WIDTH } from "../../../constant";
+import { APPLICATION_DIMENSIONS } from "../../../constant";
 
 const ApplicationLayoutContainer = styled.div`
-  min-width: ${APPLICATION_DIMENSIONS_MINIMUM_WIDTH};
+  min-width: ${APPLICATION_DIMENSIONS.MINIMUM_WIDTH}px;
 `;
 
 const ApplicationLayout = () => {
@@ -48,7 +48,7 @@ const ApplicationLayout = () => {
           <DesktopApplicationHeader />
           <div className="d-flex">
             <DesktopNavigationMenu />
-            <div>{application}</div>
+            <div className="m-3 w-100">{application}</div>
           </div>
         </ResponsiveContainer>
       </ApplicationModalContext.Provider>
