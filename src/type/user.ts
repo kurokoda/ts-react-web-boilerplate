@@ -9,7 +9,7 @@ export type User = {
   };
 };
 
-export type UserSignUpData = {
+export type AuthRequestData = {
   email: string;
   password: string;
 };

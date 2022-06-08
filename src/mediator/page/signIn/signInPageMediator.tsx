@@ -6,17 +6,20 @@ import {
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 import { useFirestore } from "reactfire";
 
 import { SignInPage } from "../../../page/signIn/signInPage";
-import { setUser } from "../../../state";
-import { UserSignUpData } from "../../../type";
+import { setUser, userSelector } from "../../../state";
+import { AuthRequestData } from "../../../type";
 
 const SignInPageMediator = () => {
   const [authUser, setAuthUser] = useState<AuthUser | null>();
 
   const auth = getAuth();
+
+  const user = useSelector(userSelector)
 
   const dispatch = useDispatch();
   const firestoreInstance = useFirestore();
@@ -34,7 +37,7 @@ const SignInPageMediator = () => {
     }
   }, [authUser, dispatch, firestoreInstance]);
 
-  const signInUser = (createUserData: UserSignUpData) => {
+  const signInUser = (createUserData: AuthRequestData) => {
     const { email, password } = createUserData;
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -47,6 +50,10 @@ const SignInPageMediator = () => {
         console.error("ERROR", errorCode, errorMessage);
       });
   };
+
+  if(user){
+    return <Navigate to="/" />
+  }
 
   return (
     <>

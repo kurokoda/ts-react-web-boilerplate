@@ -2,12 +2,12 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
 
 import { SignUpPage } from "../../../page/signUp/signUpPage";
-import { UserSignUpData } from "../../../type";
+import { AuthRequestData } from "../../../type";
 
 const SignUpPageMediator = () => {
   const auth = getAuth();
 
-  const signUpUser = (createUserData: UserSignUpData) => {
+  const signUpUser = (createUserData: AuthRequestData) => {
     const { email, password } = createUserData;
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

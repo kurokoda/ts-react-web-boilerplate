@@ -1,8 +1,8 @@
 import { TextButton } from "../../component";
-import { UserSignUpData } from "../../type";
+import { AuthRequestData } from "../../type";
 
 type HomePageProps = {
-  onSignUpButtonClick: (signUpData: UserSignUpData) => void;
+  onSignUpButtonClick: (signUpData: AuthRequestData) => void;
 };
 
 const SignUpPage = ({ onSignUpButtonClick }: HomePageProps) => {
