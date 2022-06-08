@@ -4,6 +4,7 @@ import { AuthLayout, MessageCard } from "../../component";
 import { HomePageMediator, SignInPageMediator, SignUpPageMediator } from "../../page";
 
 const ApplicationRouter = () => {
+
   return (
     <Routes>
       <Route path="/" element={<AuthLayout />}>

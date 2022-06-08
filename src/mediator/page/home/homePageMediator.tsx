@@ -1,21 +1,14 @@
 import { useContext } from "react";
-import { useDispatch } from "react-redux";
 import { Helmet } from "react-helmet-async";
 
 import { HomePage } from "../../../page/home/homePage";
 import { LoadingCard, MessageCard } from "../../../component";
-import { ApplicationModalContext, increment, useExample } from "../../../state";
+import { ApplicationModalContext, useExample } from "../../../state";
 
 const HomePageMediator = () => {
-  const dispatch = useDispatch();
-
   const [firestoreTestData, firestoreTestDataStatus] = useExample();
 
   const { showModal } = useContext(ApplicationModalContext);
-
-  const incrementReduxState = () => {
-    dispatch(increment());
-  };
 
   const showApplicationModal = (modalContent: JSX.Element) => {
     showModal(modalContent);
@@ -48,7 +41,6 @@ const HomePageMediator = () => {
       <HomePage
       firestoreTestData={firestoreTestData}
       onModalButtonClick={showApplicationModal}
-      onReduxButtonClick={incrementReduxState}
     />
     </>
   );

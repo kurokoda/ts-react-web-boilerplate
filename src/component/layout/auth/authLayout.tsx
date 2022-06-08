@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import { DesktopAuthHeader } from "../../header/auth/desktop/desktopAuthHeader";
@@ -9,6 +9,8 @@ import { NavigationMenuDesktop } from "../../navigation/menu/auth/desktop/naviga
 import { ApplicationModalContext } from "../../../state";
 import { APPLICATION_DIMENSION } from "../../../constant";
 import { useWindowBreakpoint } from "../../../state";
+import { useSelector } from "react-redux";
+import { ApplicationState } from "../../../type";
 
 const AuthLayoutContainer = styled.div`
   min-width: ${APPLICATION_DIMENSION.MINIMUM_WIDTH}px;
@@ -16,6 +18,8 @@ const AuthLayoutContainer = styled.div`
 
 const AuthLayout = () => {
   const [modalContent, setModalContent] = useState<JSX.Element | undefined>();
+
+  const user = useSelector((state: ApplicationState) => state.user);
 
   const showModal = (modalContent: JSX.Element) => {
     setModalContent(modalContent);
@@ -28,6 +32,10 @@ const AuthLayout = () => {
     setModalContent(undefined);
     return null;
   };
+
+  if (!user) {
+    return <Navigate to="/signIn" replace />;
+  }
 
   return (
     <AuthLayoutContainer>

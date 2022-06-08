@@ -1,23 +1,50 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  User as AuthUser,
+} from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useDispatch } from "react-redux";
+import { useFirestore } from "reactfire";
 
 import { SignInPage } from "../../../page/signIn/signInPage";
+import { setUser } from "../../../state";
 import { UserSignUpData } from "../../../type";
 
 const SignInPageMediator = () => {
+  const [authUser, setAuthUser] = useState<AuthUser | null>();
+
   const auth = getAuth();
+
+  const dispatch = useDispatch();
+  const firestoreInstance = useFirestore();
+
+  useEffect(() => {
+    const fetchRemoteUserData = async (uid: string) => {
+      const userRef = doc(firestoreInstance, "user", uid);
+      const userDoc = await getDoc(userRef);
+      const user = userDoc.data();
+      dispatch(setUser(user));
+    };
+
+    if (authUser) {
+      fetchRemoteUserData(authUser.uid);
+    }
+  }, [authUser, dispatch, firestoreInstance]);
 
   const signInUser = (createUserData: UserSignUpData) => {
     const { email, password } = createUserData;
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("Ian signInUser SUCCESS", user);
+        const newAuthUser: AuthUser = userCredential.user;
+        setAuthUser(newAuthUser);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log("Ian signInUser ERROR", errorCode, errorMessage);
+        console.error("ERROR", errorCode, errorMessage);
       });
   };
 

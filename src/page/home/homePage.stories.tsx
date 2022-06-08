@@ -13,7 +13,6 @@ const Template: ComponentStory<typeof HomePage> = () => (
   <HomePage
     firestoreTestData={{}}
     onModalButtonClick={() => console.log("onModalButtonClick")}
-    onReduxButtonClick={() => console.log("onReduxButtonClick")}
   />
 );
 

@@ -1,13 +1,14 @@
 import { combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
-import { exampleSlice } from "../slice/example/example";
+
+import { userSlice } from "../slice/user/user";
 
 const store = configureStore({
   reducer: combineReducers({
-    example: exampleSlice.reducer,
+    user: userSlice.reducer,
   }),
 });
 
-store.subscribe(() => console.log(store.getState()))
+store.subscribe(() => console.log(store.getState()));
 
 export { store };
