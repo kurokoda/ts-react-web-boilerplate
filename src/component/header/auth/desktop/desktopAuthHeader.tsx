@@ -6,7 +6,7 @@ import {
   APPLICATION_DIMENSION,
 } from "../../../../constant";
 
-const DesktopApplicationHeaderContainer = styled.div`
+const DesktopAuthHeaderContainer = styled.div`
   align-items: center;
   display: flex;
   background-color: ${APPLICATION_COLOR.WHITE};
@@ -14,15 +14,15 @@ const DesktopApplicationHeaderContainer = styled.div`
   filter: drop-shadow(0 4px 4px ${APPLICATION_COLOR.GRAYSCALE_LIGHTEST});
 `;
 
-const DesktopApplicationHeader = () => {
+const DesktopAuthHeader = () => {
   return (
-    <DesktopApplicationHeaderContainer>
+    <DesktopAuthHeaderContainer>
       <div>
         <img height="50" alt="Application logo" src={ApplicationLogo} />
         Application
       </div>
-    </DesktopApplicationHeaderContainer>
+    </DesktopAuthHeaderContainer>
   );
 };
 
-export { DesktopApplicationHeader };
+export { DesktopAuthHeader };

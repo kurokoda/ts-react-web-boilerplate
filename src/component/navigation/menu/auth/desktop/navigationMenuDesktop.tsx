@@ -4,11 +4,11 @@ import styled from "styled-components/macro";
 import {
   APPLICATION_COLOR,
   APPLICATION_DIMENSION,
-} from "../../../../constant";
+} from "../../../../../constant";
 
-const DesktopNavigationMenuContainer = styled.div`
+const NavigationMenuDesktopContainer = styled.div`
   background-color: ${APPLICATION_COLOR.WHITE};
-  border-right: 1px solid  ${APPLICATION_COLOR.GRAYSCALE_LIGHTEST};
+  border-right: 1px solid ${APPLICATION_COLOR.GRAYSCALE_LIGHTEST};
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -17,13 +17,13 @@ const DesktopNavigationMenuContainer = styled.div`
   width: ${APPLICATION_DIMENSION.DESKTOP_HEADER_WIDTH}px;
 `;
 
-const DesktopNavigationMenu = () => {
+const NavigationMenuDesktop = () => {
   return (
-    <DesktopNavigationMenuContainer>
+    <NavigationMenuDesktopContainer>
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
-    </DesktopNavigationMenuContainer>
+    </NavigationMenuDesktopContainer>
   );
 };
 
-export { DesktopNavigationMenu };
+export { NavigationMenuDesktop };

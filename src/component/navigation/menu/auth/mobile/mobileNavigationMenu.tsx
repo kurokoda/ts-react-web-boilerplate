@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
-import { APPLICATION_DIMENSION } from "../../../../constant";
+import { APPLICATION_DIMENSION } from "../../../../../constant";
 
 const MobileNavigationMenuContainer = styled.div`
   display: flex;

@@ -4,9 +4,9 @@ import styled from "styled-components/macro";
 import ApplicationLogo from "../../../../asset/logo.svg";
 import { APPLICATION_COLOR, APPLICATION_DIMENSION } from "../../../../constant";
 import { IconButton } from "../../../element/button/icon/iconButton";
-import { MobileNavigationMenu } from "../../../navigation/menu/mobile/mobileNavigationMenu";
+import { MobileNavigationMenu } from "../../../navigation/menu/auth/mobile/mobileNavigationMenu";
 
-const MobileApplicationHeaderContainer = styled.div`
+const MobileAuthHeaderContainer = styled.div`
   align-items: center;
   background-color: ${APPLICATION_COLOR.WHITE};
   display: flex;
@@ -18,7 +18,7 @@ const MobileApplicationHeaderContainer = styled.div`
   z-index: 100;
 `;
 
-const MobileNavigationMenuContainer = styled.div`
+const HeaderAuthMobileContainer = styled.div`
   position: absolute;
   background-color: ${APPLICATION_COLOR.WHITE};
   height: calc(100vh - ${APPLICATION_DIMENSION.MOBILE_HEADER_HEIGHT}px);
@@ -30,7 +30,7 @@ const Spacer = styled.div`
   width: 42px;
 `;
 
-const MobileApplicationHeader = () => {
+const HeaderAuthMobile = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -39,18 +39,18 @@ const MobileApplicationHeader = () => {
 
   return (
     <div>
-      <MobileApplicationHeaderContainer>
+      <MobileAuthHeaderContainer>
         <Spacer />
         <img height="50" alt="Application logo" src={ApplicationLogo} />
         <IconButton icon={isMenuOpen ? "close" : "menu"} onClick={toggleMenu} />
-      </MobileApplicationHeaderContainer>
+      </MobileAuthHeaderContainer>
       {isMenuOpen ? (
-        <MobileNavigationMenuContainer>
+        <HeaderAuthMobileContainer>
           <MobileNavigationMenu />
-        </MobileNavigationMenuContainer>
+        </HeaderAuthMobileContainer>
       ) : null}
     </div>
   );
 };
 
-export { MobileApplicationHeader };
+export { HeaderAuthMobile };

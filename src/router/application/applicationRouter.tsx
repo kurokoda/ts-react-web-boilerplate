@@ -1,13 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 
-import { MessageCard } from "../../component";
-import { HomePageMediator } from "../../page";
+import { AuthLayout, MessageCard } from "../../component";
+import { HomePageMediator, SignInPageMediator, SignUpPageMediator } from "../../page";
 
 const ApplicationRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePageMediator />} />
-      <Route path="about" element={<div>ABOUT</div>} />
+      <Route path="/" element={<AuthLayout />}>
+        <Route path="/" element={<HomePageMediator />} />
+        <Route path="about" element={<div>ABOUT</div>} />
+      </Route>
+      <Route path="signIn" element={<SignInPageMediator />} />
+      <Route path="signUp" element={<SignUpPageMediator />} />
       <Route
         path="*"
         element={

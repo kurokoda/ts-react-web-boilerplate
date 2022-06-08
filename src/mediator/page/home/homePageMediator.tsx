@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { useDispatch } from "react-redux";
 
-import { HomePage } from "./homePage";
-import { LoadingCard, MessageCard } from "../../component";
-import { ApplicationModalContext, increment, useExample } from "../../state";
+import { HomePage } from "../../../page/home/homePage";
+import { LoadingCard, MessageCard } from "../../../component";
+import { ApplicationModalContext, increment, useExample } from "../../../state";
 
 const HomePageMediator = () => {
   const dispatch = useDispatch();

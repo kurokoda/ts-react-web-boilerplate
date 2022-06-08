@@ -2,22 +2,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./index.css";
 
+import { getFirestore } from "firebase/firestore";
 import React from "react";
-import { HelmetProvider } from "react-helmet-async";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import {
   FirebaseAppProvider as FirebaseProvider,
   FirestoreProvider,
   useFirebaseApp,
 } from "reactfire";
 
+import { FIREBASE_CONFIG } from "./constant";
+import { ApplicationRouter } from "./router";
 import { reportWebVitals } from "./service";
 import { store } from "./state";
-import { getFirestore } from "firebase/firestore";
-import { FIREBASE_CONFIG } from "./constant";
-import { ApplicationLayout } from "./component";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -31,7 +31,7 @@ const Application = () => {
       <FirestoreProvider sdk={firestoreInstance}>
         <HelmetProvider>
           <BrowserRouter>
-            <ApplicationLayout />
+            <ApplicationRouter />
           </BrowserRouter>
         </HelmetProvider>
       </FirestoreProvider>
