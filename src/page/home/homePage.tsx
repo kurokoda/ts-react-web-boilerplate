@@ -1,6 +1,3 @@
-import { Helmet } from "react-helmet-async";
-import styled from "styled-components/macro";
-
 import { TextButton } from "../../component";
 import { GapContainer } from "../../component/container/gap/gapContainer";
 import { ExampleModal } from "../../component/modal/example/exampleModal";
@@ -18,12 +15,6 @@ const HomePage = ({
 }: HomePageProps) => {
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        {/* TODO replace with constants */}
-        <title>Home</title>
-        <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
       <div>HOME</div>
       <div className="mb-1">{firestoreTestData.message}</div>
       <GapContainer>

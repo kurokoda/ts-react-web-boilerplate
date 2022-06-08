@@ -1,4 +1,5 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 import { SignInPage } from "../../../page/signIn/signInPage";
 import { UserSignUpData } from "../../../type";
@@ -20,7 +21,17 @@ const SignInPageMediator = () => {
       });
   };
 
-  return <SignInPage onSignInButtonClick={signInUser} />;
+  return (
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        {/* TODO replace with constants */}
+        <title>Sign In</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <SignInPage onSignInButtonClick={signInUser} />
+    </>
+  );
 };
 
 export { SignInPageMediator };

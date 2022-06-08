@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useDispatch } from "react-redux";
+import { Helmet } from "react-helmet-async";
 
 import { HomePage } from "../../../page/home/homePage";
 import { LoadingCard, MessageCard } from "../../../component";
@@ -38,11 +39,18 @@ const HomePageMediator = () => {
   }
 
   return (
-    <HomePage
+    <>
+     <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <HomePage
       firestoreTestData={firestoreTestData}
       onModalButtonClick={showApplicationModal}
       onReduxButtonClick={incrementReduxState}
     />
+    </>
   );
 };
 

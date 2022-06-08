@@ -1,4 +1,5 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 import { SignUpPage } from "../../../page/signUp/signUpPage";
 import { UserSignUpData } from "../../../type";
@@ -21,7 +22,17 @@ const SignUpPageMediator = () => {
       });
   };
 
-  return <SignUpPage onSignUpButtonClick={signUpUser} />;
+  return (
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        {/* TODO replace with constants */}
+        <title>Sign Up</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <SignUpPage onSignUpButtonClick={signUpUser} />
+    </>
+  );
 };
 
 export { SignUpPageMediator };

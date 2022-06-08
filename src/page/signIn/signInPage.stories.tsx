@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { SignInPage } from "./signInPage";
 
 export default {
-  title: "page/signUp/signUpPage",
+  title: "page/signIn/signInPage",
   component: SignInPage,
 } as ComponentMeta<typeof SignInPage>;
 
