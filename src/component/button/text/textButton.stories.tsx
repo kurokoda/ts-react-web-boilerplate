@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { TextButton } from "./textButton";
 
 export default {
-  title: "component/element/textButton",
+  title: "component/textButton",
   component: TextButton,
   argTypes: {
     disabled: { control: "disabled" },

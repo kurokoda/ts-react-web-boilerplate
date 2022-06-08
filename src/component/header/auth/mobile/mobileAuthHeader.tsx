@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 
 import ApplicationLogo from "../../../../asset/logo.svg";
 import { APPLICATION_COLOR, APPLICATION_DIMENSION } from "../../../../constant";
-import { IconButton } from "../../../element/button/icon/iconButton";
+import { IconButton } from "../../../button/icon/iconButton";
 import { MobileNavigationMenu } from "../../../navigation/menu/auth/mobile/mobileNavigationMenu";
 
 const MobileApplicationHeaderContainer = styled.div`

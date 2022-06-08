@@ -27,7 +27,7 @@ import {
 } from "@material-ui/icons";
 import { SvgIconTypeMap } from "@material-ui/core";
 import { OverridableComponent } from "@material-ui/core/OverridableComponent";
-import { APPLICATION_COLOR } from "../../../constant";
+import { APPLICATION_COLOR } from "../../constant";
 
 export const iconTypes = [
   "add",

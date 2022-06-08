@@ -1,8 +1,8 @@
 import { Button } from "react-bootstrap";
 
-import { Tooltip } from "../../tooltip/tooltip";
 import { Icon, IconType } from "../../icon/icon";
-import { ButtonVariantType } from "../../../../type";
+import { Tooltip } from "../../tooltip/tooltip";
+import { ButtonVariantType } from "../../../type";
 
 interface IconButtonProps {
   icon: IconType;

@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import { ReactNode } from "react";
 
-import { Icon, IconType } from "../../element/icon/icon";
+import { Icon, IconType } from "../../icon/icon";
 import { APPLICATION_DIMENSION } from "../../../constant";
 
 interface MessageCardProps {
